@@ -1,5 +1,10 @@
+import loadCss from "./Loader.module.css"
+
 export default function Loader() {
   return (
-    <p></p>)
+    <div className="loader">
+      <p>Loader...</p>
+    </div>
+  );
 }
 

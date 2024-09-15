@@ -1,5 +1,9 @@
-export default function LoadMoreBtn() {
+import moreCss from "./LoadMoreBtn.module.css"
+
+export default function LoadMoreBtn({ onClick }) {
   return (
-    <div></div>
+    <div className="load-more-btn">
+      <button onClick={onClick}>Load more</button>
+    </div>
   )
 }

@@ -1,23 +1,32 @@
-export default function SearchForm({ onSearch }) {
+import { useState } from "react";
+import searchCss from "./SearchForm.module.css"
 
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
-    const form = evt.target;
-    const topic = form.elements.topic.value;
+export default function SearchForm({ onSubmit }) {
 
-    if (form.elements.topic.value.trim() === "") {
-      alert("Please enter search term!")
+  const [inputValue, setInputValue] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (inputValue.trim() === "") {
+      toast.error("Please enter a search term");
       return;
     }
-
-    onSearch(topic);
-    form.reset();
+    onSubmit(inputValue);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="topic" placeholder="Search articles..." />
-      <button>Search</button>
-    </form>
+    <header>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          placeholder="Search images and photos"
+          autoComplete="off"
+          autoFocus
+        />
+        <button type="submit">Search</button>
+      </form>
+    </header>
   );
 }

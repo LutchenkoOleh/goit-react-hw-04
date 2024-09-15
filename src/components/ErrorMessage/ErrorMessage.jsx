@@ -1,6 +1,6 @@
-export default function Error() {
-  return (
-    <div></div>
-  )
+import errorCss from "./ErrorMessage.module.css"
+
+export default function ErrorMessage({ message }) {
+  return <div className="error-message">{message}</div>;
 }
 
