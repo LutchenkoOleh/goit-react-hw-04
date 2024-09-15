@@ -1,0 +1,57 @@
+.header {
+  background-color: rgb(24, 24, 112);
+  height: 30px;
+  padding: 25px;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  margin: 0;
+  top: 0;
+}
+
+
+
+.form {
+  width: 250px;
+  margin: 0 auto;
+
+}
+
+.container {
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 10px 10px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.button {
+  position: absolute;
+  right: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button svg {
+  fill: #007bff;
+
+}
+
+.button:hover svg {
+  fill: #0056b3;
+}
+
+.button:focus svg {
+  fill: #0056b3;
+}

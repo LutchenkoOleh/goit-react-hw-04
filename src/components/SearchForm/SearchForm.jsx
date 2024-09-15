@@ -17,17 +17,25 @@ export default function SearchForm({ onSubmit }) {
   };
 
   return (
-    <header>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          placeholder="Search images and photos"
-          autoComplete="off"
-          autoFocus
-        />
-        <button type="submit">Search</button>
+    <header className={searchCss.header}>
+      <form className={searchCss.form} onSubmit={handleSubmit}>
+        <div className={searchCss.container}>
+          <input
+            className={searchCss.input}
+            type="text"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            placeholder="Search images and photos"
+            autoComplete="off"
+            autoFocus
+          />
+          <button className={searchCss.button} type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001a1.007 1.007 0 0 0-.118.14l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.14-.118zm-5.442 1.28a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z" />
+            </svg>
+
+          </button>
+        </div>
       </form>
     </header>
   );

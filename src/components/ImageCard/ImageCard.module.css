@@ -2,12 +2,16 @@
   width: calc((100% - 48px) / 3);
   width: 360px;
   height: auto;
-  border: 1px solid #808080;
 }
 
 .img {
   display: block;
   width: 360px;
-  height: 152px;
-  transition: all .3s ease;
+  height: 200px;
+  transition: transform 0.3s ease;
+  cursor: zoom-in;
+}
+
+.img:hover {
+  transform: scale(1.1);
 }

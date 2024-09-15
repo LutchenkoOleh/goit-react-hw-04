@@ -1,0 +1,17 @@
+.more {
+  width: 100px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.button {
+  width: 90px;
+  height: 40px;
+  border: none;
+  border: 1px solid #000;
+  border-radius: 4px;
+  background-color: rgb(8, 8, 231);
+  color: #fff;
+  padding: 6px;
+  cursor: pointer;
+}
