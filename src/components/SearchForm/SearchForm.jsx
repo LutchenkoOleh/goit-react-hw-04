@@ -1,5 +1,6 @@
 import { useState } from "react";
 import searchCss from "./SearchForm.module.css"
+import { toast } from "react-hot-toast";
 
 export default function SearchForm({ onSubmit }) {
 
@@ -12,6 +13,7 @@ export default function SearchForm({ onSubmit }) {
       return;
     }
     onSubmit(inputValue);
+    setInputValue("");
   };
 
   return (

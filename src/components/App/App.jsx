@@ -1,6 +1,6 @@
 
 import './App.module.css'
-import { useEffect, useState, useRef, forwardRef } from "react";
+import { useState } from "react";
 import SearchForm from '../SearchForm/SearchForm'
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import Loader from '../Loader/Loader';
@@ -8,6 +8,7 @@ import ImageModal from '../ImageModal/ImageModal';
 import ImageGallery from '../ImageGallery/ImageGallery';
 import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn';
 import { fetchArticlesWithTopic } from '../../unsplash-api'
+import { Toaster } from "react-hot-toast";
 
 
 export default function App() {
@@ -23,11 +24,11 @@ export default function App() {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetchArticlesWithTopic(query);
+      const fetchedImages = await fetchArticlesWithTopic(query, page);
       if (page === 1) {
-        setImages(response);
+        setImages(fetchedImages);
       } else {
-        setImages((prevImages) => [...prevImages, ...response]);
+        setImages((prevImages) => [...prevImages, ...fetchedImages]);
       }
     } catch (err) {
       setError("Error fetching images. Please try again.");
@@ -60,6 +61,7 @@ export default function App() {
 
   return (
     <div>
+      <Toaster />
       <SearchForm onSubmit={handleSearchSubmit} />
 
       {error && <ErrorMessage message={error} />}

@@ -6,8 +6,9 @@ export default function ImageModal({ isOpen, onRequestClose, image }) {
     <Modal
       isOpen={isOpen}
       onRequestClose={onRequestClose}
-      className="modal-content"
+      className={modalCss.modal}
       overlayClassName="modal-overlay"
+      ariaHideApp={false}
     >
       {image && (
         <>
